@@ -1,6 +1,6 @@
-package org.erpmicroservices.invoice.repositories;
+package org.erpmicroservices.invoice.endpoint.rest.repositories;
 
-import org.erpmicroservices.invoice.models.PaymentMethodType;
+import org.erpmicroservices.invoice.endpoint.rest.models.PaymentMethodType;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

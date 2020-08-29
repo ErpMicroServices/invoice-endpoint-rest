@@ -1,4 +1,4 @@
-package org.erpmicroservices.invoice.models;
+package org.erpmicroservices.invoice.endpoint.rest.models;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -9,13 +9,13 @@ import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @Entity
-public class InvoiceRoleType extends AbstractPersistable<UUID> {
+public class BillingAccountRoleType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull
  private String description;
 
  @ManyToOne
- private InvoiceRoleType parent;
+ private BillingAccountRoleType parent;
 
  public String getDescription() {
 	return description;
@@ -25,11 +25,11 @@ public class InvoiceRoleType extends AbstractPersistable<UUID> {
 	this.description = description;
  }
 
- public InvoiceRoleType getParent() {
+ public BillingAccountRoleType getParent() {
 	return parent;
  }
 
- public void setParent(InvoiceRoleType parent) {
+ public void setParent(BillingAccountRoleType parent) {
 	this.parent = parent;
  }
 }
