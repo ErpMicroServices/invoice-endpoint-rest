@@ -59,6 +59,10 @@ public class InvoiceItem extends AbstractPersistable<UUID> {
  @JoinColumn(name = "invoice_item_id")
  private final List<OrderItemBilling> orderItemBillings = new ArrayList<>();
 
+ @OneToMany
+ @JoinColumn(name = "invoice_item_id")
+ private final List<PaymentApplication> applications = new ArrayList<>();
+
  public List<Term> getTerms() {
 	return terms;
  }
