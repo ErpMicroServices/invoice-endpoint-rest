@@ -37,9 +37,9 @@ public class Invoice extends AbstractPersistable<UUID> {
 
  private UUID addressedToContactMechanismId;
 
- private UUID billedFromPartyId;
+ private UUID billedFromPartyRoleId;
 
- private UUID billedToPartyId;
+ private UUID billedToPartyRoleId;
 
  @ManyToOne
  private BillingAccount billingAccount;
@@ -69,20 +69,28 @@ public class Invoice extends AbstractPersistable<UUID> {
   this.addressedToContactMechanismId = addressedToContactMechanismId;
  }
 
- public UUID getBilledFromPartyId() {
-  return billedFromPartyId;
+ public UUID getBilledFromPartyRoleId() {
+  return billedFromPartyRoleId;
  }
 
- public void setBilledFromPartyId(UUID billedFromPartyId) {
-  this.billedFromPartyId = billedFromPartyId;
+ public void setBilledFromPartyRoleId(UUID billedFromPartyRoleId) {
+  this.billedFromPartyRoleId = billedFromPartyRoleId;
  }
 
- public UUID getBilledToPartyId() {
-  return billedToPartyId;
+ public UUID getBilledToPartyRoleId() {
+  return billedToPartyRoleId;
  }
 
- public void setBilledToPartyId(UUID billedToPartyId) {
-  this.billedToPartyId = billedToPartyId;
+ public void setBilledToPartyRoleId(UUID billedToPartyRoleId) {
+  this.billedToPartyRoleId = billedToPartyRoleId;
+ }
+
+ public BillingAccount getBillingAccount() {
+  return billingAccount;
+ }
+
+ public void setBillingAccount(BillingAccount billingAccount) {
+  this.billingAccount = billingAccount;
  }
 
  public String getDescription() {
