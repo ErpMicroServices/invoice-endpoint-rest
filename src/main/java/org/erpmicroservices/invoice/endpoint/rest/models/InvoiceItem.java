@@ -3,45 +3,67 @@ package org.erpmicroservices.invoice.endpoint.rest.models;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 
-@Entity
+@Entity(name = "invoice_item")
 public class InvoiceItem extends AbstractPersistable<UUID> {
+
+ private int sequence;
+
+ @Column(name = "taxable_flag")
+ private boolean isTaxable;
+
+ private long quantity;
+
+ private BigDecimal amount;
+
+ private String description;
+
+ @OneToMany
+ @JoinColumn(name = "adjustment_for_id")
+ private List<InvoiceItem> adjustments;
+
+ @OneToMany
+ @JoinColumn(name = "sold_for_id")
+ private List<InvoiceItem> soldWith;
+
+ private UUID inventoryItemId;
+
+ private UUID productFeatureId;
+
+ private UUID productId;
 
  @NotNull
  @ManyToOne
  private InvoiceItemType type;
 
- private boolean taxableFlag;
-
- @NotNull
- private BigDecimal amount;
-
- private String description;
-
- private BigDecimal percentage;
-
- private UUID adjustmentForId;
-
- public InvoiceItemType getType() {
-  return type;
+ public int getSequence() {
+  return sequence;
  }
 
- public void setType(InvoiceItemType type) {
-  this.type = type;
+ public void setSequence(int sequence) {
+  this.sequence = sequence;
  }
 
- public boolean isTaxableFlag() {
-  return taxableFlag;
+ public boolean isTaxable() {
+  return isTaxable;
  }
 
- public void setTaxableFlag(boolean taxableFlag) {
-  this.taxableFlag = taxableFlag;
+ public void setTaxable(boolean taxable) {
+  isTaxable = taxable;
+ }
+
+ public long getQuantity() {
+  return quantity;
+ }
+
+ public void setQuantity(long quantity) {
+  this.quantity = quantity;
  }
 
  public BigDecimal getAmount() {
@@ -60,19 +82,51 @@ public class InvoiceItem extends AbstractPersistable<UUID> {
   this.description = description;
  }
 
- public BigDecimal getPercentage() {
-  return percentage;
+ public List<InvoiceItem> getAdjustments() {
+  return adjustments;
  }
 
- public void setPercentage(BigDecimal percentage) {
-  this.percentage = percentage;
+ public void setAdjustments(List<InvoiceItem> adjustments) {
+  this.adjustments = adjustments;
  }
 
- public UUID getAdjustmentForId() {
-  return adjustmentForId;
+ public List<InvoiceItem> getSoldWith() {
+  return soldWith;
  }
 
- public void setAdjustmentForId(UUID adjustmentForId) {
-  this.adjustmentForId = adjustmentForId;
+ public void setSoldWith(List<InvoiceItem> soldWith) {
+  this.soldWith = soldWith;
+ }
+
+ public UUID getInventoryItemId() {
+  return inventoryItemId;
+ }
+
+ public void setInventoryItemId(UUID inventoryItemId) {
+  this.inventoryItemId = inventoryItemId;
+ }
+
+ public UUID getProductFeatureId() {
+  return productFeatureId;
+ }
+
+ public void setProductFeatureId(UUID productFeatureId) {
+  this.productFeatureId = productFeatureId;
+ }
+
+ public UUID getProductId() {
+  return productId;
+ }
+
+ public void setProductId(UUID productId) {
+  this.productId = productId;
+ }
+
+ public InvoiceItemType getType() {
+  return type;
+ }
+
+ public void setType(InvoiceItemType type) {
+  this.type = type;
  }
 }
