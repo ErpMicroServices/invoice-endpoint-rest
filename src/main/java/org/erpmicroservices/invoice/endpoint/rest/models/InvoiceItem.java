@@ -6,6 +6,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,91 +43,103 @@ public class InvoiceItem extends AbstractPersistable<UUID> {
  @ManyToOne
  private InvoiceItemType type;
 
+ @OneToMany
+ @JoinColumn(name = "invoice_item_id")
+ private List<Term> terms = new ArrayList<>();
+
+ public List<Term> getTerms() {
+	return terms;
+ }
+
+ public void setTerms(List<Term> terms) {
+	this.terms = terms;
+ }
+
  public int getSequence() {
-  return sequence;
+	return sequence;
  }
 
  public void setSequence(int sequence) {
-  this.sequence = sequence;
+	this.sequence = sequence;
  }
 
  public boolean isTaxable() {
-  return isTaxable;
+	return isTaxable;
  }
 
  public void setTaxable(boolean taxable) {
-  isTaxable = taxable;
+	isTaxable = taxable;
  }
 
  public long getQuantity() {
-  return quantity;
+	return quantity;
  }
 
  public void setQuantity(long quantity) {
-  this.quantity = quantity;
+	this.quantity = quantity;
  }
 
  public BigDecimal getAmount() {
-  return amount;
+	return amount;
  }
 
  public void setAmount(BigDecimal amount) {
-  this.amount = amount;
+	this.amount = amount;
  }
 
  public String getDescription() {
-  return description;
+	return description;
  }
 
  public void setDescription(String description) {
-  this.description = description;
+	this.description = description;
  }
 
  public List<InvoiceItem> getAdjustments() {
-  return adjustments;
+	return adjustments;
  }
 
  public void setAdjustments(List<InvoiceItem> adjustments) {
-  this.adjustments = adjustments;
+	this.adjustments = adjustments;
  }
 
  public List<InvoiceItem> getSoldWith() {
-  return soldWith;
+	return soldWith;
  }
 
  public void setSoldWith(List<InvoiceItem> soldWith) {
-  this.soldWith = soldWith;
+	this.soldWith = soldWith;
  }
 
  public UUID getInventoryItemId() {
-  return inventoryItemId;
+	return inventoryItemId;
  }
 
  public void setInventoryItemId(UUID inventoryItemId) {
-  this.inventoryItemId = inventoryItemId;
+	this.inventoryItemId = inventoryItemId;
  }
 
  public UUID getProductFeatureId() {
-  return productFeatureId;
+	return productFeatureId;
  }
 
  public void setProductFeatureId(UUID productFeatureId) {
-  this.productFeatureId = productFeatureId;
+	this.productFeatureId = productFeatureId;
  }
 
  public UUID getProductId() {
-  return productId;
+	return productId;
  }
 
  public void setProductId(UUID productId) {
-  this.productId = productId;
+	this.productId = productId;
  }
 
  public InvoiceItemType getType() {
-  return type;
+	return type;
  }
 
  public void setType(InvoiceItemType type) {
-  this.type = type;
+	this.type = type;
  }
 }

@@ -44,61 +44,75 @@ public class Invoice extends AbstractPersistable<UUID> {
  @ManyToOne
  private BillingAccount billingAccount;
 
+ @OneToMany
+ @JoinColumn(name = "invoice_id")
+ private final List<InvoiceStatus> statuses = new ArrayList<>();
+ @OneToMany
+ @JoinColumn(name = "invoice_id")
+ private List<Term> terms = new ArrayList<>();
+
+ public List<Term> getTerms() {
+	return terms;
+ }
+
+ public void setTerms(List<Term> terms) {
+	this.terms = terms;
+ }
 
  public List<InvoiceRole> getRoles() {
-  return roles;
+	return roles;
  }
 
  public void setRoles(List<InvoiceRole> roles) {
-  this.roles = roles;
+	this.roles = roles;
  }
 
  public UUID getSentFromContactMechanismId() {
-  return sentFromContactMechanismId;
+	return sentFromContactMechanismId;
  }
 
  public void setSentFromContactMechanismId(UUID sentFromContactMechanismId) {
-  this.sentFromContactMechanismId = sentFromContactMechanismId;
+	this.sentFromContactMechanismId = sentFromContactMechanismId;
  }
 
  public UUID getAddressedToContactMechanismId() {
-  return addressedToContactMechanismId;
+	return addressedToContactMechanismId;
  }
 
  public void setAddressedToContactMechanismId(UUID addressedToContactMechanismId) {
-  this.addressedToContactMechanismId = addressedToContactMechanismId;
+	this.addressedToContactMechanismId = addressedToContactMechanismId;
  }
 
  public UUID getBilledFromPartyRoleId() {
-  return billedFromPartyRoleId;
+	return billedFromPartyRoleId;
  }
 
  public void setBilledFromPartyRoleId(UUID billedFromPartyRoleId) {
-  this.billedFromPartyRoleId = billedFromPartyRoleId;
+	this.billedFromPartyRoleId = billedFromPartyRoleId;
  }
 
  public UUID getBilledToPartyRoleId() {
-  return billedToPartyRoleId;
+	return billedToPartyRoleId;
  }
 
  public void setBilledToPartyRoleId(UUID billedToPartyRoleId) {
-  this.billedToPartyRoleId = billedToPartyRoleId;
+	this.billedToPartyRoleId = billedToPartyRoleId;
  }
 
  public BillingAccount getBillingAccount() {
-  return billingAccount;
+	return billingAccount;
  }
 
  public void setBillingAccount(BillingAccount billingAccount) {
-  this.billingAccount = billingAccount;
+	this.billingAccount = billingAccount;
  }
 
  public String getDescription() {
-  return description;
+	return description;
  }
 
  public void setDescription(String description) {
-  this.description = description;
+	this.description = description;
  }
 
  public LocalDate getInvoiceDate() {
