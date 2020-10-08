@@ -45,67 +45,79 @@ public class Payment extends AbstractPersistable<UUID> {
  @JoinColumn(name = "payment_method_type_id")
  private PaymentMethodType type;
 
+ @OneToMany
+ @JoinColumn(name = "payment_id")
+ private List<FinancialAccountTransaction> financialAccountTransactions = new ArrayList<>();
+
+ public List<FinancialAccountTransaction> getFinancialAccountTransactions() {
+	return financialAccountTransactions;
+ }
+
+ public void setFinancialAccountTransactions(List<FinancialAccountTransaction> financialAccountTransactions) {
+	this.financialAccountTransactions = financialAccountTransactions;
+ }
+
  public LocalDate getEffectiveDate() {
-  return effectiveDate;
+	return effectiveDate;
  }
 
  public void setEffectiveDate(LocalDate effectiveDate) {
-  this.effectiveDate = effectiveDate;
+	this.effectiveDate = effectiveDate;
  }
 
  public String getPaymentReferenceNumber() {
-  return paymentReferenceNumber;
+	return paymentReferenceNumber;
  }
 
  public void setPaymentReferenceNumber(String paymentReferenceNumber) {
-  this.paymentReferenceNumber = paymentReferenceNumber;
+	this.paymentReferenceNumber = paymentReferenceNumber;
  }
 
  public BigDecimal getAmount() {
-  return amount;
+	return amount;
  }
 
  public void setAmount(BigDecimal amount) {
-  this.amount = amount;
+	this.amount = amount;
  }
 
  public String getComment() {
-  return comment;
+	return comment;
  }
 
  public void setComment(String comment) {
-  this.comment = comment;
+	this.comment = comment;
  }
 
  public List<PaymentApplication> getPaymentApplications() {
-  return paymentApplications;
+	return paymentApplications;
  }
 
  public void setPaymentApplications(List<PaymentApplication> paymentApplications) {
-  this.paymentApplications = paymentApplications;
+	this.paymentApplications = paymentApplications;
  }
 
  public UUID getReceiverPartyRoleId() {
-  return receiverPartyRoleId;
+	return receiverPartyRoleId;
  }
 
  public void setReceiverPartyRoleId(UUID receiverPartyRoleId) {
-  this.receiverPartyRoleId = receiverPartyRoleId;
+	this.receiverPartyRoleId = receiverPartyRoleId;
  }
 
  public UUID getPayorPartyRoleId() {
-  return payorPartyRoleId;
+	return payorPartyRoleId;
  }
 
  public void setPayorPartyRoleId(UUID payorPartyRoleId) {
-  this.payorPartyRoleId = payorPartyRoleId;
+	this.payorPartyRoleId = payorPartyRoleId;
  }
 
  public PaymentMethodType getType() {
-  return type;
+	return type;
  }
 
  public void setType(PaymentMethodType type) {
-  this.type = type;
+	this.type = type;
  }
 }
