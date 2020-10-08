@@ -36,4 +36,55 @@ public class BillingAccount extends AbstractPersistable<UUID> {
  @NotEmpty
  private String description;
  private UUID billedAtContactMechanismId;
+ @OneToMany
+ @JoinColumn(name = "billing_account_id")
+ private List<PaymentApplication> paymentApplications = new ArrayList<>();
+
+ public List<BillingAccountRole> getBillingAccountRoles() {
+  return billingAccountRoles;
+ }
+
+ public List<Invoice> getInvoices() {
+  return invoices;
+ }
+
+ public LocalDate getFromDate() {
+  return fromDate;
+ }
+
+ public void setFromDate(LocalDate fromDate) {
+  this.fromDate = fromDate;
+ }
+
+ public LocalDate getThruDate() {
+  return thruDate;
+ }
+
+ public void setThruDate(LocalDate thruDate) {
+  this.thruDate = thruDate;
+ }
+
+ public String getDescription() {
+  return description;
+ }
+
+ public void setDescription(String description) {
+  this.description = description;
+ }
+
+ public UUID getBilledAtContactMechanismId() {
+  return billedAtContactMechanismId;
+ }
+
+ public void setBilledAtContactMechanismId(UUID billedAtContactMechanismId) {
+  this.billedAtContactMechanismId = billedAtContactMechanismId;
+ }
+
+ public List<PaymentApplication> getPaymentApplications() {
+  return paymentApplications;
+ }
+
+ public void setPaymentApplications(List<PaymentApplication> paymentApplications) {
+  this.paymentApplications = paymentApplications;
+ }
 }
