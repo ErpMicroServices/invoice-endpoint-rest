@@ -32,12 +32,64 @@ public class Invoice extends AbstractPersistable<UUID> {
  @JoinColumn(name = "invoice_id")
  private List<InvoiceItem> invoiceItems = new ArrayList<>();
 
+ @OneToMany
+ @JoinColumn(name = "invoice_id")
+ private List<InvoiceRole> roles = new ArrayList<>();
+
+ private UUID sentFromContactMechanismId;
+
+ private UUID addressedToContactMechanismId;
+
+ private UUID billedFromPartyId;
+
+ private UUID billedToPartyId;
+
+ public List<InvoiceRole> getRoles() {
+  return roles;
+ }
+
+ public void setRoles(List<InvoiceRole> roles) {
+  this.roles = roles;
+ }
+
+ public UUID getSentFromContactMechanismId() {
+  return sentFromContactMechanismId;
+ }
+
+ public void setSentFromContactMechanismId(UUID sentFromContactMechanismId) {
+  this.sentFromContactMechanismId = sentFromContactMechanismId;
+ }
+
+ public UUID getAddressedToContactMechanismId() {
+  return addressedToContactMechanismId;
+ }
+
+ public void setAddressedToContactMechanismId(UUID addressedToContactMechanismId) {
+  this.addressedToContactMechanismId = addressedToContactMechanismId;
+ }
+
+ public UUID getBilledFromPartyId() {
+  return billedFromPartyId;
+ }
+
+ public void setBilledFromPartyId(UUID billedFromPartyId) {
+  this.billedFromPartyId = billedFromPartyId;
+ }
+
+ public UUID getBilledToPartyId() {
+  return billedToPartyId;
+ }
+
+ public void setBilledToPartyId(UUID billedToPartyId) {
+  this.billedToPartyId = billedToPartyId;
+ }
+
  public String getDescription() {
-	return description;
+  return description;
  }
 
  public void setDescription(String description) {
-	this.description = description;
+  this.description = description;
  }
 
  public LocalDate getInvoiceDate() {
