@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-@Entity
+@Entity(name = "invoice")
 public class Invoice extends AbstractPersistable<UUID> {
 
  private String description;
@@ -43,6 +40,10 @@ public class Invoice extends AbstractPersistable<UUID> {
  private UUID billedFromPartyId;
 
  private UUID billedToPartyId;
+
+ @ManyToOne
+ private BillingAccount billingAccount;
+
 
  public List<InvoiceRole> getRoles() {
   return roles;
