@@ -9,7 +9,7 @@
     </parent>
     <groupId>org.erpmicroservices.invoice.endpoint.rest</groupId>
     <artifactId>invoice-api-rest</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>invoice-api-rest</name>
     <description>Restful HATEOAS endpoints for invoices.</description>
@@ -18,7 +18,7 @@
         <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git
         </developerConnection>
         <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</url>
-        <tag>invoice-api-rest-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
