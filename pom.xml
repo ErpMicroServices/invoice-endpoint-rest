@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.erpmicroservices.invoice.endpoint.rest</groupId>
-    <artifactId>invoice</artifactId>
+    <artifactId>invoice-api-rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>invoice-endpoint-rest</name>
+    <name>invoice-api-rest</name>
     <description>Restful HATEOAS endpoints for invoices.</description>
 
     <scm>
