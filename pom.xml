@@ -15,10 +15,10 @@
     <description>Restful HATEOAS endpoints for invoices.</description>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git
+        <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git
         </developerConnection>
-        <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</url>
+        <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -26,7 +26,7 @@
         <repository>
             <id>github</id>
             <name>GitHub ErpMicroServices Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/ErpMicroServices/invoice-endpoints-rest</url>
+            <url>https://maven.pkg.github.com/ErpMicroServices/invoice-endpoint-rest</url>
         </repository>
     </distributionManagement>
 
