@@ -15,7 +15,7 @@
     <description>Restful HATEOAS endpoints for invoices.</description>
     <scm>
         <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest-foo.git
+        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git
         </developerConnection>
         <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</url>
         <tag>HEAD</tag>
