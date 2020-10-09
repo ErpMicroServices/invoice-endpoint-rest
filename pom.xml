@@ -13,6 +13,7 @@
     <packaging>jar</packaging>
     <name>invoice-api-rest</name>
     <description>Restful HATEOAS endpoints for invoices.</description>
+
     <scm>
         <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest-foo.git
@@ -20,7 +21,6 @@
         <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoints-rest.git</url>
         <tag>invoice-api-rest-1.0.0</tag>
     </scm>
-
 
     <distributionManagement>
         <repository>
