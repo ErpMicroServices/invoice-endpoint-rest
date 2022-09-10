@@ -15,38 +15,39 @@ import java.util.UUID;
 @Entity(name = "financial_account")
 public class FinancialAccount extends AbstractPersistable<UUID> {
 
- @NotNull
- @NotEmpty
- private String name;
+	@NotNull
+	@NotEmpty
+	private String name;
 
- @OneToMany
- private List<FinancialAccountRole> financialAccountRoles = new ArrayList<>();
+	@OneToMany
+	@JoinColumn(name = "financial_account_id")
+	private List<FinancialAccountRole> financialAccountRoles = new ArrayList<>();
 
- @ManyToOne
- @JoinColumn(name = "financial_account_type_id")
- private FinancialAccountType type;
+	@ManyToOne
+	@JoinColumn(name = "financial_account_type_id")
+	private FinancialAccountType type;
 
- public String getName() {
-  return name;
- }
+	public String getName() {
+		return name;
+	}
 
- public void setName(String name) {
-  this.name = name;
- }
+	public void setName(String name) {
+		this.name = name;
+	}
 
- public List<FinancialAccountRole> getFinancialAccountRoles() {
-  return financialAccountRoles;
- }
+	public List<FinancialAccountRole> getFinancialAccountRoles() {
+		return financialAccountRoles;
+	}
 
- public void setFinancialAccountRoles(List<FinancialAccountRole> financialAccountRoles) {
-  this.financialAccountRoles = financialAccountRoles;
- }
+	public void setFinancialAccountRoles(List<FinancialAccountRole> financialAccountRoles) {
+		this.financialAccountRoles = financialAccountRoles;
+	}
 
- public FinancialAccountType getType() {
-  return type;
- }
+	public FinancialAccountType getType() {
+		return type;
+	}
 
- public void setType(FinancialAccountType type) {
-  this.type = type;
- }
+	public void setType(FinancialAccountType type) {
+		this.type = type;
+	}
 }
