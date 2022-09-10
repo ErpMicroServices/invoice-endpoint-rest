@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Invoice Endpoint REST
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/invoice_database
+    username: invoice_database
+    password: invoice_database
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.data.repository: INFO
+    org.hibernate: INFO
