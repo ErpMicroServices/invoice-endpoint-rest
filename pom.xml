@@ -4,22 +4,22 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version >2.7.3</version >
+        <version>2.7.3</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.erpmicroservices.invoice.endpoint.rest</groupId>
-    <artifactId >invoice-endpoint-rest</artifactId >
-    <version>1.0.1-SNAPSHOT</version>
+    <artifactId>invoice-endpoint-rest</artifactId>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
-    <name >invoice-endpoint-rest</name >
+    <name>invoice-endpoint-rest</name>
     <description>Restful HATEOAS endpoints for invoices.</description>
 
     <scm>
         <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</connection>
-        <developerConnection >scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git
-        </developerConnection >
+        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git
+        </developerConnection>
         <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</url>
-        <tag>HEAD</tag>
+        <tag>invoice-endpoint-rest-1.0.1</tag>
     </scm>
 
     <distributionManagement>
@@ -31,7 +31,7 @@
     </distributionManagement>
 
     <properties>
-        <java.version >18</java.version >
+        <java.version>18</java.version>
     </properties>
 
     <dependencies>
@@ -92,7 +92,7 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version >7.0.5.Final</version >
+            <version>7.0.5.Final</version>
         </dependency>
 
         <dependency>
@@ -103,20 +103,20 @@
         <dependency>
             <groupId>com.vladmihalcea</groupId>
             <artifactId>hibernate-types-52</artifactId>
-            <version >2.18.0</version >
+            <version>2.18.0</version>
         </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
-            <plugin >
-                <groupId >org.springframework.boot</groupId >
-                <artifactId >spring-boot-maven-plugin</artifactId >
-                <configuration >
-                    <imageName >erpmicroservices/invoice-endpoint-rest</imageName >
-                </configuration >
-            </plugin >
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>erpmicroservices/invoice-endpoint-rest</imageName>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
