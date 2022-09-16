@@ -27,7 +27,7 @@ public class FinancialAccountRole extends AbstractPersistable<UUID> {
  @JsonFormat(pattern = "yyyy-MM-dd")
  private LocalDate thruDate;
 
- private UUID partyID;
+ private UUID partyId;
 
  @ManyToOne
  @JoinColumn(name = "financial_account_role_type_id")
@@ -41,27 +41,27 @@ public class FinancialAccountRole extends AbstractPersistable<UUID> {
 	this.fromDate = fromDate;
  }
 
- public LocalDate getThruDate() {
-	return thruDate;
- }
+	public LocalDate getThruDate() {
+		return thruDate;
+	}
 
- public void setThruDate(LocalDate thruDate) {
-	this.thruDate = thruDate;
- }
+	public void setThruDate(LocalDate thruDate) {
+		this.thruDate = thruDate;
+	}
 
- public UUID getPartyID() {
-	return partyID;
- }
+	public UUID getPartyId() {
+		return partyId;
+	}
 
- public void setPartyID(UUID partyID) {
-	this.partyID = partyID;
- }
+	public void setPartyId(UUID partyID) {
+		this.partyId = partyID;
+	}
 
- public FinancialAccountRoleType getType() {
-	return type;
- }
+	public FinancialAccountRoleType getType() {
+		return type;
+	}
 
- public void setType(FinancialAccountRoleType type) {
-	this.type = type;
- }
+	public void setType(FinancialAccountRoleType type) {
+		this.type = type;
+	}
 }
