@@ -16,8 +16,8 @@
 
     <scm>
         <connection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git
-        </developerConnection>
+        <developerConnection >scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git
+        </developerConnection >
         <url>scm:git:ssh://git@github.com/ErpMicroServices/invoice-endpoint-rest.git</url>
         <tag>HEAD</tag>
     </scm>
