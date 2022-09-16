@@ -14,12 +14,12 @@ import java.util.UUID;
 @Entity(name = "invoice_item")
 public class InvoiceItem extends AbstractPersistable<UUID> {
 
- private int sequence;
+ private BigDecimal sequence;
 
  @Column(name = "taxable_flag")
  private boolean isTaxable;
 
- private long quantity;
+	private BigDecimal quantity;
 
  private BigDecimal amount;
 
@@ -71,13 +71,13 @@ public class InvoiceItem extends AbstractPersistable<UUID> {
 	this.terms = terms;
  }
 
- public int getSequence() {
-	return sequence;
- }
+	public BigDecimal getSequence() {
+		return sequence;
+	}
 
- public void setSequence(int sequence) {
-	this.sequence = sequence;
- }
+	public void setSequence(BigDecimal sequence) {
+		this.sequence = sequence;
+	}
 
  public boolean isTaxable() {
 	return isTaxable;
@@ -87,13 +87,13 @@ public class InvoiceItem extends AbstractPersistable<UUID> {
 	isTaxable = taxable;
  }
 
- public long getQuantity() {
-	return quantity;
- }
+	public BigDecimal getQuantity() {
+		return quantity;
+	}
 
- public void setQuantity(long quantity) {
-	this.quantity = quantity;
- }
+	public void setQuantity(BigDecimal quantity) {
+		this.quantity = quantity;
+	}
 
  public BigDecimal getAmount() {
 	return amount;
